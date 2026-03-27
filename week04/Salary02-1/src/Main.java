@@ -36,9 +36,9 @@ public class Main {
 //                departments[1], grades[1]),
 //        };
 
-//        Company company = new Company(employees);
-//        company.inputData();
-//        company.display();
+        Company company = new Company(employees);
+        company.inputData();
+        company.display();
 
     }
 }
