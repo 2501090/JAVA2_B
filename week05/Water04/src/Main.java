@@ -16,4 +16,5 @@ public class Main {
         office.inputData();    // 사용량 입력받기
         office.printReceipt(); // 결과 출력하기
     }
+    //
 }
