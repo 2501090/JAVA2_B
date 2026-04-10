@@ -1,8 +1,6 @@
 //  Hello World
 
-import java.util.*;
-import java.lang.*;
-import java.io.*;
+import java.util.Scanner;
 
 class Main {
     public static void main(String[] args) {
@@ -10,4 +8,4 @@ class Main {
 
         System.out.println("Hello World!");
     }
-}$
+}
