@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Baekjoon Online Judge/A-B/A_B.iml" filepath="$PROJECT_DIR$/Baekjoon Online Judge/A-B/A_B.iml" />
+      <module fileurl="file://$PROJECT_DIR$/week07/ClassRoom01/ClassRoom01.iml" filepath="$PROJECT_DIR$/week07/ClassRoom01/ClassRoom01.iml" />
       <module fileurl="file://$PROJECT_DIR$/Baekjoon Online Judge/Hello World/Hello_World.iml" filepath="$PROJECT_DIR$/Baekjoon Online Judge/Hello World/Hello_World.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/JAVA2_B.iml" filepath="$PROJECT_DIR$/.idea/JAVA2_B.iml" />
       <module fileurl="file://$PROJECT_DIR$/week02/Report01/Report01.iml" filepath="$PROJECT_DIR$/week02/Report01/Report01.iml" />
@@ -30,6 +31,7 @@
       <module fileurl="file://$PROJECT_DIR$/week02/week02.iml" filepath="$PROJECT_DIR$/week02/week02.iml" />
       <module fileurl="file://$PROJECT_DIR$/week05/week05.iml" filepath="$PROJECT_DIR$/week05/week05.iml" />
       <module fileurl="file://$PROJECT_DIR$/week06/week06.iml" filepath="$PROJECT_DIR$/week06/week06.iml" />
+      <module fileurl="file://$PROJECT_DIR$/week07/week07.iml" filepath="$PROJECT_DIR$/week07/week07.iml" />
     </modules>
   </component>
 </project>
