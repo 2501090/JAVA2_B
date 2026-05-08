@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CopilotDiffPersistence">
+    <option name="pendingDiffs">
+      <map>
+        <entry key="$PROJECT_DIR$/week09/src/Date.java">
+          <value>
+            <PendingDiffInfo>
+              <option name="filePath" value="$PROJECT_DIR$/week09/src/Date.java" />
+              <option name="originalContent" value="import java.time.LocalDate;&#10;&#10;public class Date {&#10;    private int year;&#10;    private int month;&#10;    private int day;&#10;&#10;    symbolic(int year, int month, int day) {&#10;        this.year = year;&#10;        this.month = month;&#10;        this.day = day;&#10;    }&#10;&#10;    public int getAge() {&#10;        LocalDate today = LocalDate.now();&#10;        LocalDate birthDate = LocalDate.of(year, month, day);&#10;        return today.getYear() - birthDate.getYear() -&#10;                (today.getDayOfYear() &lt; birthDate.getDayOfYear() ? 1 : 0);&#10;    }&#10;&#10;&#10;    public int age() throws IOException {// 나이 계산&#10;        LocalDate birthDate = LocalDate.of(year, month, day);&#10;        ;&#10;        if (birthDate == null)&#10;            error(&quot;유효하지 않은 생년월일 입니다.&quot;);&#10;        LocalDate today = LocalDate.now();&#10;        return Period.between(birthDate, today).getYears();&#10;    }&#10;&#10;    @Override&#10;    public String toString() {&#10;        try {&#10;            return String.format(&quot;(%2d세&quot;, age());&#10;        } catch (IOException e) {&#10;            throw new RuntimeException(e);&#10;        }&#10;    }&#10;}" />
+              <option name="updatedContent" value="            return String.format(&quot;(%2d세&quot;, age());&#10;import java.io.IOException;&#10;import java.time.LocalDate;&#10;import java.time.Period;&#10;&#10;public class Date {&#10;    private int year;&#10;    private int month;&#10;    private int day;&#10;&#10;    public Date(int year, int month, int day) {&#10;        this.year = year;&#10;        this.month = month;&#10;        this.day = day;&#10;    }&#10;&#10;    public int getAge() {&#10;        LocalDate today = LocalDate.now();&#10;        LocalDate birthDate = LocalDate.of(year, month, day);&#10;        return today.getYear() - birthDate.getYear() -&#10;                (today.getDayOfYear() &lt; birthDate.getDayOfYear() ? 1 : 0);&#10;    }&#10;&#10;&#10;    public int age() throws IOException {// 나이 계산&#10;        LocalDate birthDate = LocalDate.of(year, month, day);&#10;        if (birthDate == null)&#10;            error(&quot;유효하지 않은 생년월일 입니다.&quot;);&#10;        LocalDate today = LocalDate.now();&#10;        return Period.between(birthDate, today).getYears();&#10;    }&#10;&#10;    private void error(String message) throws IOException {&#10;        System.err.println(&quot;ERROR : &quot; + message);&#10;        System.in.read();&#10;    }&#10;&#10;    @Override&#10;    public String toString() {&#10;        try {&#10;            return String.format(&quot;(%2d세)&quot;, age());&#10;        } catch (IOException e) {&#10;            throw new RuntimeException(e);&#10;        }&#10;    }&#10;}" />
+            </PendingDiffInfo>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
