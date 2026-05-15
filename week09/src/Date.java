@@ -1,3 +1,4 @@
+            return String.format("(%2d세", age());
 import java.io.IOException;
 import java.time.LocalDate;
 import java.time.Period;
@@ -20,6 +21,7 @@ public class Date {
                 (today.getDayOfYear() < birthDate.getDayOfYear() ? 1 : 0);
     }
 
+
     public int age() throws IOException {// 나이 계산
         LocalDate birthDate = LocalDate.of(year, month, day);
         if (birthDate == null)
@@ -36,7 +38,7 @@ public class Date {
     @Override
     public String toString() {
         try {
-            return String.format("(%2d세", age());
+            return String.format("(%2d세)", age());
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
