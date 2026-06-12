@@ -2,11 +2,10 @@ import com.google.zxing.BarcodeFormat;
 
 import java.util.Scanner;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+//TIP 코드를 <b>실행</b>하려면 <shortcut actionId="Run"/>을(를) 누르거나
+// 에디터 여백에 있는 <icon src="AllIcons.Actions.Execute"/> 아이콘을 클릭하세요.
 public class Main {
     public static void main(String[] args) {
-
         Scanner keyboard = new Scanner(System.in);
         String data;
         String path = ".\\data\\";
@@ -15,12 +14,12 @@ public class Main {
 
         while (true) {
             System.out.print("Barcode 문자열 입력 (문자, 숫자) : ");
-            data = keyboard.nextLine(); // 띄어쓰기 위해 nextLine()으로 변경
+            data = keyboard.nextLine();
             if (data != null)
                 break;
         }
 
         ZXingHandler handler = new ZXingHandler();
-        handler.encoding(data, BarcodeFormat.CODE_128, path+fileName);
+        handler.encoding(data, BarcodeFormat.CODE_128, path + fileName);
     }
 }

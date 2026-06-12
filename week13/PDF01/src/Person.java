@@ -7,11 +7,11 @@ public class Person {
         this.gender = gender;
     }
 
-    public String getGender() {
-        return gender;
-    }
-
     public String getName() {
         return name;
+    }
+
+    public String getGender() {
+        return gender;
     }
 }

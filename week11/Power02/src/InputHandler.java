@@ -6,6 +6,7 @@ import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 
 public class InputHandler {
+
     public ArrayList<Customer> readData(File file) {
         ArrayList<Customer> customers = new ArrayList<>();
         try {
@@ -24,14 +25,14 @@ public class InputHandler {
                 customers.add(customer);
             }
             reader.close();
-            if(customers.isEmpty()) {
+            if (customers.isEmpty()) {
                 System.out.println("데이터가 없습니다");
                 System.exit(-1);
             } else {
-                System.out.printf("%,d개의 데이터를 읽었습니다\n", customers.size());
+                System.out.printf("%,d 개의 데이터를 읽었습니다.\n", customers.size());
             }
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            System.out.println(e.getMessage());
         }
         return customers;
     }

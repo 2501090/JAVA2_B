@@ -1,14 +1,15 @@
 import java.io.File;
+import java.io.IOException;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class InputHandler {
 
-    ArrayList<Customer> customers = new ArrayList<>();
-
     protected ArrayList<Customer> readData(File file) {
+        ArrayList<Customer> customers = new ArrayList<>();
         try {
-            Scanner fileScanner = new Scanner(file);
+            Scanner fileScanner = new Scanner(file, StandardCharsets.UTF_8);
             String line;
             while (fileScanner.hasNextLine()) {
                 line = fileScanner.nextLine();
@@ -17,13 +18,11 @@ public class InputHandler {
                 while (lineScanner.hasNext()) {
                     String customID = lineScanner.next();
                     Customer customer;
-                    if (customID.charAt(0) == '9') {
+                    if (customID.charAt(0) == '9')
                         customer = new Special(lineScanner.next(), customID, lineScanner.nextInt());
-                        customers.add(customer);
-                    } else if (customID.charAt(0) == 'S') {
+                    else
                         customer = new Normal(lineScanner.next(), customID, lineScanner.nextInt());
-                        customers.add(customer);
-                    }
+                    customers.add(customer);
                 }
                 lineScanner.close();
             }
@@ -32,9 +31,9 @@ public class InputHandler {
                 System.out.println("데이터가 없습니다");
                 System.exit(-1);
             } else {
-                System.out.printf("%d개의 데이터를 읽었습니다\n", customers.size());
+                System.out.printf("%d개의 데이터를 읽었습니다.\n", customers.size());
             }
-        } catch (Exception e) {
+        } catch (IOException e) {
             System.out.println(e.getMessage());
         }
         return customers;

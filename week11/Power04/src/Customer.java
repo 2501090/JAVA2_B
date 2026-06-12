@@ -1,12 +1,22 @@
-// 자식 방지용으로 abstract class로 선언
-abstract public class Customer extends Person implements Constants {
+abstract public class Customer extends Person implements Constants{
     private String customID;
     private int powerUsage;
 
-    //객체 초기화 = 생성자 , setter 두가지 방법
+    public Customer() {
+        super();
+    }
+
     public Customer(String name, String customID, int powerUsage) {
         super(name);
         this.customID = customID;
+        this.powerUsage = powerUsage;
+    }
+
+    public void setCustomID(String customID) {
+        this.customID = customID;
+    }
+
+    public void setPowerUsage(int powerUsage) {
         this.powerUsage = powerUsage;
     }
 
@@ -14,8 +24,7 @@ abstract public class Customer extends Person implements Constants {
         return powerUsage;
     }
 
-    //사용요금
-    protected int fee() {
+    protected int fee(){
         int temp = powerUsage;
         float fee = basic;
         for (int i = 0; i < table.length; i++) {
@@ -28,8 +37,7 @@ abstract public class Customer extends Person implements Constants {
         return (int) fee;
     }
 
-    //세금
-    private int tax() {
+    private int tax(){
         return (int) (fee() * rate);
     }
 
@@ -39,7 +47,8 @@ abstract public class Customer extends Person implements Constants {
 
     @Override
     public String toString() {
-        return String.format("%5s %s %,5d kw %,9d원 %,7d원 %,9d원",
+        return String.format(" %5s %3s %,5d Kw %,9d원 %,7d원 %,9d원",
                 customID, getName(), powerUsage, fee(), tax(), charge());
+
     }
 }

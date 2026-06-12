@@ -9,11 +9,11 @@ public class PowerOffice {
 
     protected void sortByCharge() {
         for (int i = 0; i < customers.size() - 1; i++) {
-            for (int j = 0; j < customers.size() - 1 - i; j++) {
-                if (customers.get(j).charge() > customers.get(j + 1).charge()) {
-                    Customer temp = customers.get(j);
-                    customers.set(j, customers.get(j + 1));
-                    customers.set(j + 1, temp);
+            for (int j = i + 1; j < customers.size(); j++) {
+                if (customers.get(i).charge() < customers.get(j).charge()) {
+                    Customer customer = customers.get(i);
+                    customers.set(i, customers.get(j));
+                    customers.set(j, customer);
                 }
             }
         }

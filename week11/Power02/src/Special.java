@@ -1,4 +1,4 @@
-public class Special extends Customer {
+public class Special extends Customer{
     public Special(String name, String customID, int powerUsage) {
         super(name, customID, powerUsage);
     }
@@ -21,6 +21,6 @@ public class Special extends Customer {
 
     @Override
     public String toString() {
-        return String.format("%s 지원가구",super.toString());
+        return String.format("%s 지원가구", super.toString());
     }
 }

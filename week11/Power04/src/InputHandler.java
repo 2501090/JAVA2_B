@@ -1,24 +1,31 @@
+import org.apache.commons.io.FileUtils;
+
+import java.io.File;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class InputHandler {
-    public ArrayList<Customer> readData(File file) {
-        ArrayList<Customer> customers;
+
+    public ArrayList<Customer> readData(File file)  {
+        ArrayList<Customer> customers = new ArrayList<>();
+
         try {
             List<String> lines = FileUtils.readLines(file, StandardCharsets.UTF_8);
             for (int i = 0; i < lines.size(); i++) {
                 String line = lines.get(i);
-                line = line.trim().replaceAll(" ", "");
+                line = line.trim().replaceAll(",", "");
                 Scanner lineScanner = new Scanner(line);
                 while (lineScanner.hasNext()) {
                     String customID = lineScanner.next();
-                    if (customID.charAt(0) == '9') {
-                        customer = new Special(lineScanner.next(), customID, lineScanner.nextInt();
-                    } else {
+                    Customer customer;
+                    if (customID.charAt(0) == '9')
+                        customer = new Special(lineScanner.next(), customID, lineScanner.nextInt());
+                    else
                         customer = new Normal(lineScanner.next(), customID, lineScanner.nextInt());
-                    } customers.add(customer);
+                    customers.add(customer);
                 }
                 lineScanner.close();
             }
@@ -26,13 +33,11 @@ public class InputHandler {
                 System.out.println("데이터가 없습니다");
                 System.exit(-1);
             } else {
-                System.out.printf("%,d개의 데이터를 읽었습니다\n", customers.size());
+                System.out.printf("%,d개의 데이터를 읽었습니다.\n", customers.size());
             }
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            System.out.println(e.getMessage());
         }
         return customers;
-    }
-        FileUtils.readFileToString(file, StandardCharsets.UTF_8);
     }
 }

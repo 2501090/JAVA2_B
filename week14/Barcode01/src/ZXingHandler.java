@@ -11,16 +11,16 @@ import java.nio.file.Paths;
 
 public class ZXingHandler {
 
-    protected void encoding(String data, BarcodeFormat format, String fileName) throws WriterException {
+    protected void encoding(String data, BarcodeFormat format, String fielName) {
         try {
             MultiFormatWriter writer = new MultiFormatWriter();
             BitMatrix matrix = writer.encode(data, format, 300, 100);
-            Path path = Paths.get(fileName);
+            Path path = Paths.get(fielName);
             MatrixToImageConfig config = new MatrixToImageConfig(
                     0xFFFF0000, 0xFFFFFFFF); // 검정, 흰색
 
             MatrixToImageWriter.writeToPath(matrix, "PNG", path, config);
-            System.out.println("Barcode 생성 완료 : " + fileName);
+            System.out.println("Barcode 생성 완료");
         } catch (WriterException | IOException e) {
             System.out.println(e.getMessage());
         }

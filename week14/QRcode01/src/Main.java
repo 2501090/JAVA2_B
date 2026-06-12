@@ -1,25 +1,23 @@
 import java.util.Scanner;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+//TIP 코드를 <b>실행</b>하려면 <shortcut actionId="Run"/>을(를) 누르거나
+// 에디터 여백에 있는 <icon src="AllIcons.Actions.Execute"/> 아이콘을 클릭하세요.
 public class Main {
     public static void main(String[] args) {
-
         Scanner keyboard = new Scanner(System.in);
         String data;
         String path = ".\\data\\";
-        String fileName = "QRCode.png";
+        String fileName = "qrcode.png";
 
-        ZXingHandler handler = new ZXingHandler();
         while (true) {
             System.out.print("QRCode 텍스트 입력 : ");
             data = keyboard.nextLine();
-            if (data.isEmpty()) {
-                System.out.println("종료");
+            if (!data.isEmpty())
                 break;
-            }
-            // generate QR code for the entered text
-            handler.encoding(data, path + fileName);
         }
+
+        ZXingHandler handler = new ZXingHandler();
+        handler.encoding(data, path + fileName);
+
     }
 }
